@@ -42,12 +42,12 @@
 
     <TextView
         android:id="@+id/state"
-        android:layout_width="40dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/face"
         android:layout_marginTop="3dp"
-        android:background="@drawable/tv_bg"
+        android:background="@drawable/blue_circle"
         android:gravity="center"
         android:text="直播"
         android:textColor="@color/black" />

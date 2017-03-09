@@ -22,17 +22,31 @@ import okhttp3.Response;
  */
 
 public class PageUtils {
+    private static Builder builder;
+    private Context context;
+    private Type type;
+    private String url;
+    private MaterialRefreshLayout refreshLayout;
+    private boolean canLoadMore;
+    private OnPageListener onPageListener;
+
+    private int totalPage;
+    private int pageIndex;
+    private int pageSize;
+
+    private HashMap<String, Object> params = new HashMap<>(5);
+
+
     private static final int STATE_NORMAL = 0;//正常状态
     private static final int STATE_REFRESH = 1;//刷新
     private static final int STATE_MORE = 2;//加载更多
-    private int state = STATE_NORMAL;//默认状态是正常状态
 
-    private static Builder builder;
+    private int state = STATE_NORMAL;//默认状态是正常状态
     private OkHttpHelper okHttpHelper;
 
     private PageUtils() {
-        okHttpHelper = OkHttpHelper.getInstance();
         initRefreshLayout();
+        okHttpHelper = OkHttpHelper.getInstance();
     }
 
     public static Builder newBuilder() {
@@ -40,12 +54,14 @@ public class PageUtils {
         return builder;
     }
 
-    public void request(){
+    public void request() {
         requestData();
     }
-    public void putParam(String key,Object value){
+
+    public void putParam(String key, Object value) {
         builder.putParam(key, value);
     }
+
     private void initRefreshLayout() {
         builder.refreshLayout.setLoadMore(builder.canLoadMore);//开始加载
         builder.refreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
@@ -108,21 +124,21 @@ public class PageUtils {
     private <T> void showData(List<T> datas, int totalPage, int totalCount) {
         switch (state) {
             case STATE_NORMAL:
-                if (builder.onPageListener != null) {
-                    builder.onPageListener.load(datas, totalPage, totalCount);
+                if (this.onPageListener != null) {
+                    this.onPageListener.load(datas, totalPage, totalCount);
                 }
                 break;
             case STATE_REFRESH:
-                if (builder.onPageListener != null) {
-                    builder.onPageListener.refresh(datas, totalPage, totalCount);
+                if (this.onPageListener != null) {
+                    this.onPageListener.refresh(datas, totalPage, totalCount);
                 }
-                builder.refreshLayout.finishRefresh();
+                this.refreshLayout.finishRefresh();
                 break;
             case STATE_MORE:
-                if (builder.onPageListener != null) {
-                    builder.onPageListener.loadMore(datas, totalPage, totalCount);
+                if (this.onPageListener != null) {
+                    this.onPageListener.loadMore(datas, totalPage, totalCount);
                 }
-                builder.refreshLayout.finishRefreshLoadMore();
+                this.refreshLayout.finishRefreshLoadMore();
                 break;
         }
     }
@@ -141,13 +157,13 @@ public class PageUtils {
         private String url;
         private MaterialRefreshLayout refreshLayout;
         private boolean canLoadMore;
+        private OnPageListener onPageListener;
 
         private int totalPage = 1;
         private int pageIndex = 1;
         private int pageSize = 10;
 
         private HashMap<String, Object> params = new HashMap<>(5);
-        private OnPageListener onPageListener;
 
         public Builder setOnPageListener(OnPageListener onPageListener) {
             this.onPageListener = onPageListener;
@@ -180,10 +196,22 @@ public class PageUtils {
         }
 
         public PageUtils build(Context context, Type type) {
-            this.context = context;
             this.type = type;
+            this.context = context;
             validate();
-            return new PageUtils();
+            PageUtils pageUtils = new PageUtils();
+            pageUtils.context = this.context;
+            pageUtils.type = this.type;
+            pageUtils.url = this.url;
+            pageUtils.refreshLayout = this.refreshLayout;
+            pageUtils.canLoadMore = this.canLoadMore;
+            pageUtils.onPageListener = this.onPageListener;
+            pageUtils.totalPage = this.totalPage;
+            pageUtils.pageIndex = this.pageIndex;
+            pageUtils.pageSize = this.pageSize;
+            pageUtils.params = this.params;
+            pageUtils.initRefreshLayout();
+            return pageUtils;
         }
 
         private void validate() {
