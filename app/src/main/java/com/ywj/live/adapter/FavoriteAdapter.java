@@ -30,6 +30,7 @@ public class FavoriteAdapter extends SimpleAdapter<PlayInfo> {
         holder.getTextView(R.id.live_name_tv).setText(item.getName());
         holder.getTextView(R.id.live_location_tv).setText(item.getPlace());
         holder.getTextView(R.id.state).setText(item.getStatus());
+       // holder.getTextView(R.id.state).setBackgroundResource(R.drawable.tv_bg);
 
     }
 }
