@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by xiaoyuan on 17/3/8.
+ * Created by yj on 17/3/8.
  */
 
 public class HomeFragment extends BaseFragment {
@@ -49,8 +49,8 @@ public class HomeFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        FavoriteFragment favoriteFragment = FavoriteFragment.newInstance();
-        HotFragment hotFragment = HotFragment.newInstance();
+        Home_choiceness_Fragment favoriteFragment = Home_choiceness_Fragment.newInstance();
+        Home_hot_Fragment hotFragment = Home_hot_Fragment.newInstance();
         mFragments.add(favoriteFragment);
         mFragments.add(hotFragment);
 

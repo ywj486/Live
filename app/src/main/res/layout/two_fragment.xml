@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/live_tow_llt"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="#9F8D8D"
+        android:orientation="horizontal">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/live_two_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/ic_launcher"
+            fresco:actualImageScaleType="centerInside"
+            fresco:roundAsCircle="true"
+            fresco:roundingBorderColor="@color/lightslategray"
+            fresco:roundingBorderWidth="1dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/live_tow_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/love_im_rll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#9F8D8D">
+
+
+        <ImageView
+            android:id="@+id/live_tow_im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/game_icon_resume" />
+
+        <ImageView
+            android:id="@+id/live_two_love"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ss_heart1" />
+
+        <ImageView
+            android:id="@+id/live_tow_gift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/live_two_love"
+            android:src="@mipmap/game_icon_resume" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/live_tow_im_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/love_im_rll"
+        android:layout_below="@id/live_tow_llt" />
+
+</RelativeLayout>

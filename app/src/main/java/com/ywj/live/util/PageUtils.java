@@ -95,8 +95,14 @@ public class PageUtils {
         requestData();
     }
 
+//    private void requestData() {
+//        okHttpHelper.get(buildUrl(),
+//                new RequestCallBack(builder.context));
+//
+//    }
+
     private void requestData() {
-        okHttpHelper.get(buildUrl(),
+        okHttpHelper.post(buildUrl(), params,
                 new RequestCallBack(builder.context));
 
     }

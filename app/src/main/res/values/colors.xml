@@ -15,4 +15,5 @@
     <color name="category">#dcdcdc</color>
     <color name="gray_bg">#E4E4E7</color>
     <color name="gray">#8fa495</color>
+    <color name="lightslategray">#F0F0F0</color>
 </resources>
