@@ -16,7 +16,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:src="@mipmap/ic_launcher"
             fresco:actualImageScaleType="centerInside"
             fresco:roundAsCircle="true"
@@ -71,6 +72,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/love_im_rll"
+        android:layout_below="@id/live_tow_llt" />
+
+    <tyrantgit.widget.HeartLayout
+        android:id="@+id/two_fragment_hear"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/live_tow_llt" />
 
 </RelativeLayout>
