@@ -8,9 +8,8 @@
         android:id="@+id/live_tow_llt"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="@color/gray_bg"
-        android:orientation="horizontal"
-        >
+        android:background="@color/gray"
+        android:orientation="horizontal">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/live_two_head"
@@ -25,29 +24,27 @@
             fresco:roundingBorderColor="@color/lightslategray"
             fresco:roundingBorderWidth="1dp" />
         <LinearLayout
-            android:layout_width="70dp"
+            android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:paddingTop="10dp"
-            android:layout_margin="5dp"
+            android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/pure_page_live_is_live_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="长颜草"
-                android:layout_marginBottom="3dp"
-                android:textColor="@color/gray" />
+                android:text="直播"
+                android:textColor="#fff" />
 
             <TextView
                 android:id="@+id/pure_page_live_people"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="486"
-                android:textColor="@color/gray" />
+                android:text="666"
+                android:textColor="#fff" />
         </LinearLayout>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/live_tow_rl"
             android:layout_width="match_parent"
@@ -61,8 +58,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="48dp"
         android:orientation="horizontal"
-        android:visibility="gone"
-        android:id="@+id/input">
+        android:visibility="gone">
 
         <EditText
             android:id="@+id/msg_et"
@@ -86,7 +82,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/gray_bg">
+        android:background="@color/gray">
 
 
         <TextView
@@ -94,7 +90,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="5dp"
             android:background="@drawable/bg_radius_bottom_white"
             android:gravity="center"
             android:text="聊天"
@@ -120,21 +116,14 @@
             android:textSize="10sp" />
 
     </RelativeLayout>
-<!--
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/live_tow_im_rl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/love_im_rll"
-        android:layout_below="@id/live_tow_llt" />
--->
+
     <ListView
         android:id="@+id/live_tow_im_lv"
         android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_height="123dp"
         android:layout_above="@+id/love_im_rll"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="10dp"
         />
     <tyrantgit.widget.HeartLayout
         android:id="@+id/two_fragment_hear"

@@ -36,7 +36,7 @@ public class Home_HotAdapter extends SimpleAdapter<Living.ResultBean.ListBean> {
         holder.getTextView(R.id.hot_name_tv).setText(item.getUser().getUser_data().getUser_name());
         holder.getTextView(R.id.hot_location_tv).setText(item.getData().getLive_name());
         ImageView img = holder.getImageView(R.id.hot_face);
-        holder.getTextView(R.id.hot_state).setText(((item.getData().getStatus()==0)?"正在直播中":"直播已结束"));
+        holder.getTextView(R.id.hot_state).setText(((item.getData().getStatus()==0)?"直播中":"已结束"));
 
         //跳过内存缓存
         Glide.with( mContext ).load(item.getData().getPic()).skipMemoryCache(true).into(img);

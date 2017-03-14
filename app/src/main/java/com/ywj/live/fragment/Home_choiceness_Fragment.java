@@ -18,6 +18,7 @@ import com.ywj.live.R;
 import com.ywj.live.adapter.Home_ChioncenessAdapter;
 import com.ywj.live.adapter.decoration.DividerItemDecoration;
 import com.ywj.live.entity.Living;
+import com.ywj.live.fragment.base.BaseFragment;
 import com.ywj.live.http.Contants;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -50,18 +51,14 @@ public class Home_choiceness_Fragment extends BaseFragment {
     @BindView(R.id.refresh)
     MaterialRefreshLayout mRefreshLayout;
 
-
     private Home_ChioncenessAdapter mChAdapter;
 
-
     private List<Living.ResultBean.ListBean> list;
-
 
     public static Home_choiceness_Fragment newInstance() {
         Home_choiceness_Fragment fragment = new Home_choiceness_Fragment();
         return fragment;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -85,8 +82,6 @@ public class Home_choiceness_Fragment extends BaseFragment {
      * 请求数据通过Post请求
      */
     private void requestDataByPost() {
-
-        Log.e("TAG", "page===" + page);
 
         OkHttpUtils
                 .post()
@@ -148,7 +143,6 @@ public class Home_choiceness_Fragment extends BaseFragment {
         }
     }
 
-
     private void initRefreshLayout() {
         mRefreshLayout.setLoadMore(true);
         mRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
@@ -173,7 +167,7 @@ public class Home_choiceness_Fragment extends BaseFragment {
         // 结束下拉刷新...
         mRefreshLayout.finishRefresh();
 
-        // 结束上拉刷新...
+        // 结束上拉加载...
         mRefreshLayout.finishRefreshLoadMore();
 
     }

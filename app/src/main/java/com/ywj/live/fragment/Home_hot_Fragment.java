@@ -20,6 +20,7 @@ import com.ywj.live.adapter.Home_HotAdapter;
 import com.ywj.live.adapter.base.BaseAdapter;
 import com.ywj.live.adapter.decoration.DividerItemDecoration;
 import com.ywj.live.entity.Living;
+import com.ywj.live.fragment.base.BaseFragment;
 import com.ywj.live.http.Contants;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -106,7 +107,6 @@ public class Home_hot_Fragment extends BaseFragment {
                 });
     }
 
-
     /**
      * 展示数据   通过不停的状态执行不同的数据展示形式
      */
@@ -126,14 +126,13 @@ public class Home_hot_Fragment extends BaseFragment {
                         DividerItemDecoration.HORIZONTAL_LIST));
                 mChAdapter.setmOnItemClickListener(new BaseAdapter.OnItemClickListener() {
                     @Override
-                    public void onItemClick(View view, int psition) {
-                        Living.ResultBean.ListBean wares = mChAdapter.getItem(psition);
+                    public void onItemClick(View view, int position) {
+                        Living.ResultBean.ListBean wares = mChAdapter.getItem(position);
                         Intent intent = new Intent(getActivity(), LiveActivity.class);
                         intent.putExtra("viewPager", 1);
                         startActivity(intent);
                     }
                 });
-
 
                 break;
             case STATE_REFRESH://刷新数据时需要清空数据源并填充新的数据源，并刷新
@@ -143,7 +142,6 @@ public class Home_hot_Fragment extends BaseFragment {
                 mRefreshLayout.finishRefresh();
 
                 break;
-
             case STATE_MORE://在原来的 基础上再次添加数据，并将数据定位到刷新后的位置
                 mChAdapter.addData(mChAdapter.getItemCount(), list);
                 mRecyclerView.scrollToPosition(mChAdapter.getItemCount());
@@ -152,7 +150,6 @@ public class Home_hot_Fragment extends BaseFragment {
 
         }
     }
-
 
     private void initRefreshLayout() {
         mRefreshLayout.setLoadMore(true);

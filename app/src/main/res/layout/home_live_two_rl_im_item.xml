@@ -6,8 +6,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:text="匿名消息 ："
+        android:text=" 杨静 ："
         android:textSize="20sp"
+        android:id="@+id/live_im_username"
         />
     <TextView
         android:layout_gravity="center_vertical"

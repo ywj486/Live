@@ -41,9 +41,9 @@ public class Home_ChioncenessAdapter extends RecyclerView.Adapter<Home_Chioncene
         holder.home_choiceness_item_name.setText(listBean.getData().getLive_name());
         holder.home_choiceness_item_path.setText("北京");
         if ("0".equals(listBean.getData().getStatus())) {
-            holder.home_choiceness_item_state.setText("正在直播中");
+            holder.home_choiceness_item_state.setText("直播中");
         } else {
-            holder.home_choiceness_item_state.setText("直播已结束");
+            holder.home_choiceness_item_state.setText("已结束");
         }
     }
 
