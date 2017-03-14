@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -98,6 +99,7 @@ public class Fragment_Two extends Fragment {
         getLove();
         setChat();
         setSend();
+        sendGift();
         //sendMsg();
         return view;
     }
@@ -123,6 +125,20 @@ public class Fragment_Two extends Fragment {
 //                DividerItemDecoration.HORIZONTAL_LIST));
 //        live_tow_im_rl.setAdapter(mTwo_im_adapter);
 
+    }
+    private void sendGift() {
+        live_tow_gift.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomDialog(v);
+            }
+        });
+    }
+
+    public void showBottomDialog(View v) {
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        BottomGiftDialogFragment editNameDialog = new BottomGiftDialogFragment();
+        editNameDialog.show(fm, "fragment_bottom_dialog");
     }
 
     private void setListData() {

@@ -6,8 +6,8 @@
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/homw_live_two_rl_uhead"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         fresco:actualImageScaleType="centerInside"
         fresco:roundAsCircle="true"
         android:layout_centerInParent="true"

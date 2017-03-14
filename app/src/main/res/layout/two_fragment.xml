@@ -7,15 +7,15 @@
     <LinearLayout
         android:id="@+id/live_tow_llt"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="70dp"
         android:background="@color/gray_bg"
         android:orientation="horizontal"
         >
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/live_two_head"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -25,9 +25,8 @@
             fresco:roundingBorderColor="@color/lightslategray"
             fresco:roundingBorderWidth="1dp" />
         <LinearLayout
-            android:layout_width="70dp"
-            android:layout_height="100dp"
-            android:paddingTop="10dp"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
             android:layout_margin="5dp"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -113,7 +112,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/live_two_love"
+            android:layout_marginLeft="110dp"
             android:background="@drawable/bg_radius_bottom_white"
             android:gravity="center"
             android:text="送礼物"

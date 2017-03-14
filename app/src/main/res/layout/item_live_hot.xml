@@ -35,9 +35,10 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/hot_face"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="240dp"
         android:layout_below="@id/hot_header_img_sdv"
-        app:viewAspectRatio="1" />
+        app:viewAspectRatio="1"
+        android:scaleType="fitXY"/>
 
     <TextView
         android:id="@+id/hot_state"
